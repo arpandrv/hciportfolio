@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>04_User_Stories.md</title>
+  <style>
+@page { size: A4; margin: 18mm 16mm; }
+* { box-sizing: border-box; }
+html { background:#eef2ef; }
+body { font-family:"Segoe UI", Arial, sans-serif; color:#17221c; font-size:11pt; line-height:1.52; margin:0; }
+main { max-width:190mm; margin:0 auto; background:#fff; min-height:100vh; padding:20mm 17mm; }
+h1,h2,h3,h4 { color:#163524; line-height:1.18; margin:1.25em 0 .45em; break-after:avoid; }
+h1 { margin-top:0; font-size:24pt; border-bottom:2px solid #b9d5c2; padding-bottom:7px; }
+h2 { font-size:17pt; border-bottom:1px solid #d7e4db; padding-bottom:4px; }
+h3 { font-size:13.5pt; }
+p { margin:0 0 .72em; }
+ul,ol { margin:0 0 .85em 1.35em; padding:0; }
+table { width:100%; border-collapse:collapse; margin:.95em 0 1.15em; font-size:9.4pt; }
+tr { break-inside:avoid; }
+th,td { border:1px solid #cbd8cf; padding:7px 8px; vertical-align:top; }
+th { background:#eef5f0; color:#153321; font-weight:700; }
+code { font-family:Consolas, monospace; background:#f3f6f4; border:1px solid #dde7e0; border-radius:4px; padding:.08em .28em; }
+pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9f7; border:1px solid #d9e4dc; border-radius:7px; padding:12px 14px; font-size:9pt; }
+pre code { background:transparent; border:0; padding:0; }
+a { color:#1c6843; }
+.source-title { color:#57655c; font-size:8.5pt; margin-bottom:10px; padding-bottom:6px; border-bottom:1px solid #dce7df; overflow-wrap:anywhere; }
+.portfolio-index ul { columns:2; column-gap:28px; }
+.portfolio-index li { break-inside:avoid; margin-bottom:.35em; }
+@media print {
+  html, body { background:#fff; }
+  main { max-width:none; min-height:auto; padding:0; }
+  .portfolio-index ul { columns:1; }
+}
+</style>
+</head>
+<body>
+  <main>
+<h1>User Stories</h1>
+<p>The stories are written for the proposed CDU study-break support system and focus on what students would need to trust, use, and return from short outdoor reset breaks.</p>
+<h2>Updated User Stories</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>User story</th>
+<th>Acceptance criteria</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>US1</td>
+<td>As a student in a long study session, I want break prompts to appear at a suitable stopping point so that I am not interrupted in the middle of a difficult task.</td>
+<td>The user can choose a remind-after-current-task option. The user can snooze a prompt. The prompt does not force an immediate break. The system uses non-judgemental wording.</td>
+</tr>
+<tr>
+<td>US2</td>
+<td>As a student who worries about losing focus, I want to save one clear next step before leaving so that I can restart quickly when I return.</td>
+<td>Before the break starts, the user is asked to enter or select a short task anchor. The anchor can be as simple as a page number, question number, section, or next action. The same anchor appears on the return screen.</td>
+</tr>
+<tr>
+<td>US3</td>
+<td>As a student deciding whether to go outside, I want one clear nearby shaded option so that I do not waste energy choosing between too many places.</td>
+<td>The system shows one recommended option by default. The option includes walking time, total break time, and a simple route. The user can view more options only if they choose to.</td>
+</tr>
+<tr>
+<td>US4</td>
+<td>As a student studying in Darwin, I want to know whether the suggested spot has shade, seating, and comfortable conditions so that I do not end up standing in the heat.</td>
+<td>Each suggested spot shows confirmed shade status, seating availability, walking distance, and heat/weather warning. If comfort is poor, the system suggests an indoor fallback with a reason.</td>
+</tr>
+<tr>
+<td>US5</td>
+<td>As a student taking a short break, I want a clear timer and return reminder so that the break does not become open-ended.</td>
+<td>The user can start a 5, 7, or 10 minute timer. The timer includes walking and return time where relevant.The system gives a clear return cue at the end of the break.</td>
+</tr>
+<tr>
+<td>US6</td>
+<td>As a student who often defaults to phone scrolling or games, I want a low-distraction break activity so that I can rest without getting pulled into my phone.</td>
+<td>During the break, the screen shows only the timer, return cue, and one short nature-noticing prompt that can change sometimes with a smooth animation. The system avoids long text and unnecessary controls. The user can return to the task anchor quickly.</td>
+</tr>
+<tr>
+<td>US7</td>
+<td>As a student who prefers simple breaks, I want the app to feel low-effort so that using it does not feel like another task.</td>
+<td>The main break flow works with one or two taps. The user does not need to read a long explanation. The suggested route and total time are visible immediately.</td>
+</tr>
+<tr>
+<td>US8</td>
+<td>As a student who values a proper outdoor reset, I want to know whether a space is quiet or crowded so that the break feels restorative instead of distracting.</td>
+<td>Each outdoor spot can display quiet/crowd level such as quiet, moderate, or busy. The system can prioritise quieter spots when the user chooses a quiet reset preference.</td>
+</tr>
+<tr>
+<td>US9</td>
+<td>As a group study student, I want a group break mode so that everyone receives the same return signal and one person does not have to end the break.</td>
+<td>A group break can be started with a shared timer. The timer can be shown or shared with group members. The return prompt appears at the same time for the group. The suggested spot shows whether it suits multiple people.</td>
+</tr>
+<tr>
+<td>US10</td>
+<td>As a group study student, I want to know whether a suggested spot has enough space for several people so that the group does not arrive at a place that only works for one person.</td>
+<td>Suggested spots include a group-suitability tag such as solo, pair, or small group. Group mode does not recommend spaces that are too small for the selected group size.</td>
+</tr>
+<tr>
+<td>US11</td>
+<td>As a privacy-conscious student, I want location use to be optional and temporary so that I do not feel like the app is tracking me in the background.</td>
+<td>The user can use manual start location or opt-in location. Background tracking is off by default. The app explains that location is used only to suggest nearby spots.</td>
+</tr>
+<tr>
+<td>US12</td>
+<td>As a student taking an outdoor reset, I want a short nature prompt that isn&#39;t forced or sounds cheesy so that I can briefly notice the environment without feeling forced into a meditation exercise.</td>
+<td>The prompt is one sentence only. Examples include noticing breeze, shade, trees, or looking away from the screen. The prompt does not block the timer or return action.</td>
+</tr>
+<tr>
+<td>US13</td>
+<td>As a student under time pressure, I want to see the full time cost of the break before leaving so that I can decide whether I can afford it.</td>
+<td>The system shows total estimated time including walking, break duration, and return. The user can choose a shorter version if needed. Routes longer than the student’s limit are not recommended by default.</td>
+</tr>
+<tr>
+<td>US14</td>
+<td>As a student who does not know campus outdoor spots well, I want directions using simple landmarks so that I can find the place without studying a complex map.</td>
+<td>Suggested routes include plain-language cues such as &quot;near this building&quot; or &quot;beside the tree area near the entrance&quot;; the map view is simple and does not require advanced navigation.</td>
+</tr>
+</tbody></table>
+<h2>Minimum Viable User Story Set</h2>
+<p>For the prototype, the most important stories to demonstrate are:</p>
+<table>
+<thead>
+<tr>
+<th>Prototype focus</th>
+<th>Related user stories</th>
+<th>Why this matters</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Flow-sensitive break prompt</td>
+<td>US1</td>
+<td>Students reject random interruptions, especially during deep work.</td>
+</tr>
+<tr>
+<td>Task anchor and return screen</td>
+<td>US2</td>
+<td>Returning to study is one of the strongest repeated needs across the participants.</td>
+</tr>
+<tr>
+<td>One nearby shaded suggestion</td>
+<td>US3, US4, US13, US14</td>
+<td>Students need comfort certainty before they will leave the library.</td>
+</tr>
+<tr>
+<td>Bounded timer</td>
+<td>US5</td>
+<td>Breaks often become longer than intended without a clear endpoint.</td>
+</tr>
+<tr>
+<td>Low-distraction break screen</td>
+<td>US6, US12</td>
+<td>The system should help students avoid phone-based distraction without forcing wellness language.</td>
+</tr>
+<tr>
+<td>Privacy-friendly location use</td>
+<td>US11</td>
+<td>Trust depends on optional and purposeful data use.</td>
+</tr>
+<tr>
+<td>Optional group mode</td>
+<td>US9, US10</td>
+<td>Group study has a different problem: social breaks extend unless everyone shares the same return signal.</td>
+</tr>
+<tr>
+<td>Nature-noticing Prompt</td>
+<td>U12</td>
+<td>Gives students a simple way to shift attention away from screens and notice the outdoor environment, while keeping the break short, and not overly “wellness” focused.</td>
+</tr>
+</tbody></table>
+<h1></h1>
+
+  </main>
+  <script src="../assets/view-as-pdf.js" defer></script>
+</body>
+</html>

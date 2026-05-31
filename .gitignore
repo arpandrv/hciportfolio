@@ -1,0 +1,30 @@
+# Publish only the generated GitHub Pages output.
+*
+
+!.gitignore
+!.nojekyll
+!index.html
+!htmls/
+!htmls/**
+
+# Local-only source and generated PDF submission copies.
+markdowns/
+pdfs/
+node_modules/
+package-lock.json
+convert-portfolio.js
+view-as-pdf.js
+package.json
+README_LOCAL.md
+RUN_BUILD.bat
+htmls/files.html
+htmls/01_project_management/03_Ethics_Documents
+htmls/01_project_management/04_Consent_Forms
+
+
+# Optional safety if media ever lands in htmls.
+htmls/**/*.m4a
+htmls/**/*.mp3
+htmls/**/*.wav
+htmls/**/*.mp4
+htmls/**/*.mov

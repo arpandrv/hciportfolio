@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>02_Design_Iterations.md</title>
+  <style>
+@page { size: A4; margin: 18mm 16mm; }
+* { box-sizing: border-box; }
+html { background:#eef2ef; }
+body { font-family:"Segoe UI", Arial, sans-serif; color:#17221c; font-size:11pt; line-height:1.52; margin:0; }
+main { max-width:190mm; margin:0 auto; background:#fff; min-height:100vh; padding:20mm 17mm; }
+h1,h2,h3,h4 { color:#163524; line-height:1.18; margin:1.25em 0 .45em; break-after:avoid; }
+h1 { margin-top:0; font-size:24pt; border-bottom:2px solid #b9d5c2; padding-bottom:7px; }
+h2 { font-size:17pt; border-bottom:1px solid #d7e4db; padding-bottom:4px; }
+h3 { font-size:13.5pt; }
+p { margin:0 0 .72em; }
+ul,ol { margin:0 0 .85em 1.35em; padding:0; }
+table { width:100%; border-collapse:collapse; margin:.95em 0 1.15em; font-size:9.4pt; }
+tr { break-inside:avoid; }
+th,td { border:1px solid #cbd8cf; padding:7px 8px; vertical-align:top; }
+th { background:#eef5f0; color:#153321; font-weight:700; }
+code { font-family:Consolas, monospace; background:#f3f6f4; border:1px solid #dde7e0; border-radius:4px; padding:.08em .28em; }
+pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9f7; border:1px solid #d9e4dc; border-radius:7px; padding:12px 14px; font-size:9pt; }
+pre code { background:transparent; border:0; padding:0; }
+a { color:#1c6843; }
+.source-title { color:#57655c; font-size:8.5pt; margin-bottom:10px; padding-bottom:6px; border-bottom:1px solid #dce7df; overflow-wrap:anywhere; }
+.portfolio-index ul { columns:2; column-gap:28px; }
+.portfolio-index li { break-inside:avoid; margin-bottom:.35em; }
+@media print {
+  html, body { background:#fff; }
+  main { max-width:none; min-height:auto; padding:0; }
+  .portfolio-index ul { columns:1; }
+}
+</style>
+</head>
+<body>
+  <main>
+<h1>Overall prototype idea and Design Iterations</h1>
+<p><strong>Canopy Pause V6: Final Study-Safe Nature Reset</strong></p>
+<hr>
+<h2>Core Solo Flow</h2>
+<pre><code class="language-mermaid">flowchart LR
+  A[&quot;Focus Session
+Use my usual reset&quot;] --&gt; B[&quot;Study Handoff
+Finish before leaving + resume after returning&quot;]
+  B --&gt; C[&quot;Usual Reset Recommendation
+Comfort estimate + total time&quot;]
+  C --&gt; D[&quot;Reset Journey
+Walk → Notice → Return&quot;]
+  D --&gt; E[&quot;Nature Reset Timer
+One short nature prompt&quot;]
+  E --&gt; F[&quot;Return Cue
+Start here task anchor&quot;]
+  F --&gt; G[&quot;Resume Focus
+Start 25-min focus&quot;]
+</code></pre>
+<hr>
+<h2>Supporting Flows</h2>
+<pre><code class="language-mermaid">flowchart TD
+  C[&quot;Usual Reset Recommendation&quot;] --&gt; H[&quot;Change Reset Style
+Closest / Quietest / Coolest / Indoor Nature&quot;]
+  C --&gt; I[&quot;Why This Spot?
+Prototype estimate explanation&quot;]
+  C --&gt; J[&quot;Indoor Nature Reset&quot;]
+  A[&quot;Focus Session&quot;] --&gt; K[&quot;Group Reset&quot;]
+  K --&gt; L[&quot;Group Recommendation&quot;]
+  L --&gt; M[&quot;Shared Group Timer&quot;]
+  M --&gt; N[&quot;Group Return Cue&quot;]
+</code></pre>
+<hr>
+<h1>Design Iterations - Canopy Pause</h1>
+<hr>
+<h2>Iteration Overview</h2>
+<table>
+<thead>
+<tr>
+<th align="right">Iteration</th>
+<th>Prototype name</th>
+<th>Main purpose</th>
+<th>Main problem discovered</th>
+<th>Main design response</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">1</td>
+<td>Map-First Reset Finder</td>
+<td>Test the basic idea with map, comfort, route, timer, and return support</td>
+<td>Felt too map-heavy and information-heavy</td>
+<td>Move toward study-flow-first design</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>Study-Flow First Reset</td>
+<td>Make task anchor and break timing central</td>
+<td>Flow was clearer but still too many screens</td>
+<td>Create one-tap smart recommendation</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>One-Tap Smart Reset</td>
+<td>Use Wizard-of-Oz comfort intelligence without overloading user</td>
+<td>Users wanted control over what the best reset meant for them</td>
+<td>Add reset preferences and group mode</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Personalised + Group Reset</td>
+<td>Test Closest, Quietest, Coolest, and Group-friendly modes</td>
+<td>Personalisation was useful but added repeated choice effort</td>
+<td>Add “Use my usual reset” and clearer group sharing</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>Usual Reset + Shared Timer</td>
+<td>Make repeat use faster and group sharing clearer</td>
+<td>Needed final explanation, stopping-point support, and polish</td>
+<td>Stabilise final V6 flow</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>Final Study-Safe Nature Reset</td>
+<td>Final prototype for evaluation</td>
+<td>Minor polish only</td>
+<td>Use as final Wizard-of-Oz prototype</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Iteration 1: Map-First Reset Finder</h2>
+<h3>Prototype intent</h3>
+<p>The first prototype tested whether students understood the basic idea of using an app to find a nearby shaded outdoor reset spot during a long library study session.</p>
+<h3>Feedback pattern</h3>
+<p>Users understood the concept, but many felt the prototype behaved too much like a campus map. The comfort score sounded too precise and the map/detail screen created decision effort.</p>
+<h3>Design problems</h3>
+<ul>
+<li>Too many spot choices.</li>
+<li>Numeric comfort score was unclear.</li>
+<li>Nature prompt felt secondary.</li>
+<li>Privacy/location wording was weak.</li>
+<li>Group mode felt unfinished.</li>
+<li>Task anchor was useful but not central enough.</li>
+</ul>
+<hr>
+<h2>Iteration 2: Study-Flow First Reset</h2>
+<h3>Prototype intent</h3>
+<p>Prototype 2 tested whether the app worked better when it focused first on protecting study flow rather than showing map data.</p>
+<h3>Feedback pattern</h3>
+<p>Users found this clearer than Prototype 1. They liked one recommended spot and understood plain comfort labels. However, they still said the flow had too many screens.</p>
+<h3>Design problems</h3>
+<ul>
+<li>Still too much tapping for a short break.</li>
+<li>Break timing wording such as good pause point soon was vague.</li>
+<li>Group mode still lacked detail.</li>
+<li>Low-distraction break mode could be stronger.</li>
+</ul>
+<hr>
+<h2>Iteration 3: One-Tap Smart Reset</h2>
+<h3>Prototype intent</h3>
+<p>Prototype 3 tested whether the app could feel faster and smarter while still being honest about simulated comfort data.</p>
+<h3>Feedback pattern</h3>
+<p>Users liked the faster flow and trusted smart data more when it was labelled as an estimate. They questioned how the app knew seats were free and wanted more control over what kind of reset was recommended.</p>
+<h3>Design problems</h3>
+<ul>
+<li>Best meant different things to different users.</li>
+<li>Some wanted closest, others quietest, others coolest/shadiest.</li>
+<li>Group mode was still not developed.</li>
+<li>Change prompt risked encouraging more phone interaction.</li>
+<li><strong>Add 2 min</strong> could encourage break drift.</li>
+</ul>
+<hr>
+<h2>Iteration 4: Personalised + Group Reset</h2>
+<h3>Prototype intent</h3>
+<p>Prototype 4 tested whether students preferred to guide the recommendation by choosing a reset style.</p>
+<h3>Main changes</h3>
+<p>Added reset styles:</p>
+<ul>
+<li><strong>Closest</strong>:  lowest effort.</li>
+<li><strong>Quietest</strong>:  calmer space.</li>
+<li><strong>Coolest</strong>: best shade and heat comfort.</li>
+<li><strong>Group-friendly</strong>: suitable for study groups.</li>
+</ul>
+<p>Added group mode:</p>
+<ul>
+<li>group size,</li>
+<li>group task anchor,</li>
+<li>group-suitable spot,</li>
+<li>group capacity tags,</li>
+<li>shared timer,</li>
+<li>“keep voices low” reminder.</li>
+</ul>
+<h3>Feedback pattern</h3>
+<p>Users liked the control, especially Quietest and Coolest. Group users found group mode much more useful. However, several users said choosing a reset style every time added friction.</p>
+<h3>Design problems</h3>
+<ul>
+<li>Preference choice added a step.</li>
+<li>Users wanted the app to remember their usual choice.</li>
+<li>Group timer sharing needed clearer QR/link behaviour.</li>
+<li>Group capacity wording needed more precision.</li>
+<li>Indoor/window fallback still felt somewhat secondary.</li>
+</ul>
+<hr>
+<h2>Iteration 5: Usual Reset + Shared Timer</h2>
+<h3>Prototype intent</h3>
+<p>Prototype 5 tested whether remembered preferences made the app feel more realistic and repeat-use friendly.</p>
+<h3>Main changes</h3>
+<ul>
+<li>Added <strong>Use my usual reset</strong>.</li>
+<li>Added <strong>Usual reset: Coolest / Quietest / Closest / Indoor Nature</strong>.</li>
+<li>Reframed fallback as <strong>Indoor Nature Reset</strong>.</li>
+<li>Added clearer group capacity wording:<ul>
+<li><strong>Seats 2, space for 4 standing</strong>.</li>
+</ul>
+</li>
+<li>Added share group timer screen:<ul>
+<li>Show QR code,</li>
+<li>Copy timer link,</li>
+<li>Start on this phone only.</li>
+</ul>
+</li>
+</ul>
+<h3>Feedback pattern</h3>
+<p>Users found this version much quicker. They liked usual reset and the clearer group timer. Deep-focus users still wanted stronger support for deciding what to finish before leaving.</p>
+<h3>Design problems</h3>
+<ul>
+<li>“Usual reset” needed a clear explanation.</li>
+<li>Users needed stopping-point support before leaving.</li>
+<li><strong>Add 2 min</strong> still risked break drift.</li>
+<li>Indoor Nature Reset needed to feel intentionally nature-connected.</li>
+</ul>
+<hr>
+<h2>Iteration 6: Final Study-Safe Nature Reset</h2>
+<h3>Prototype intent</h3>
+<p>Prototype 6 stabilised the final design.</p>
+<h3>Final changes</h3>
+<ul>
+<li>Kept <strong>Use my usual reset</strong> as the main action.</li>
+<li>Added explanation:<ul>
+<li><strong>Based on your last reset. Change anytime.</strong></li>
+</ul>
+</li>
+<li>Added final Study Handoff screen:<ul>
+<li><strong>Before I leave, I will finish...</strong></li>
+<li><strong>When I return, I will resume...</strong></li>
+</ul>
+</li>
+<li>Kept task anchor visible on timer, return cue, and resume screen.</li>
+<li>Made <strong>Need 2 more minutes?</strong> a small secondary link.</li>
+<li>Kept Indoor Nature Reset as a valid reset path.</li>
+<li>Finalised group flow with QR/link sharing and group return cue.</li>
+<li>Kept all nature prompts one sentence.</li>
+</ul>
+<h1></h1>
+<hr>
+
+  </main>
+  <script src="../assets/view-as-pdf.js" defer></script>
+</body>
+</html>

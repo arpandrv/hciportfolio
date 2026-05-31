@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>03_Cognitive_Walkthrough.md</title>
+  <style>
+@page { size: A4; margin: 18mm 16mm; }
+* { box-sizing: border-box; }
+html { background:#eef2ef; }
+body { font-family:"Segoe UI", Arial, sans-serif; color:#17221c; font-size:11pt; line-height:1.52; margin:0; }
+main { max-width:190mm; margin:0 auto; background:#fff; min-height:100vh; padding:20mm 17mm; }
+h1,h2,h3,h4 { color:#163524; line-height:1.18; margin:1.25em 0 .45em; break-after:avoid; }
+h1 { margin-top:0; font-size:24pt; border-bottom:2px solid #b9d5c2; padding-bottom:7px; }
+h2 { font-size:17pt; border-bottom:1px solid #d7e4db; padding-bottom:4px; }
+h3 { font-size:13.5pt; }
+p { margin:0 0 .72em; }
+ul,ol { margin:0 0 .85em 1.35em; padding:0; }
+table { width:100%; border-collapse:collapse; margin:.95em 0 1.15em; font-size:9.4pt; }
+tr { break-inside:avoid; }
+th,td { border:1px solid #cbd8cf; padding:7px 8px; vertical-align:top; }
+th { background:#eef5f0; color:#153321; font-weight:700; }
+code { font-family:Consolas, monospace; background:#f3f6f4; border:1px solid #dde7e0; border-radius:4px; padding:.08em .28em; }
+pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9f7; border:1px solid #d9e4dc; border-radius:7px; padding:12px 14px; font-size:9pt; }
+pre code { background:transparent; border:0; padding:0; }
+a { color:#1c6843; }
+.source-title { color:#57655c; font-size:8.5pt; margin-bottom:10px; padding-bottom:6px; border-bottom:1px solid #dce7df; overflow-wrap:anywhere; }
+.portfolio-index ul { columns:2; column-gap:28px; }
+.portfolio-index li { break-inside:avoid; margin-bottom:.35em; }
+@media print {
+  html, body { background:#fff; }
+  main { max-width:none; min-height:auto; padding:0; }
+  .portfolio-index ul { columns:1; }
+}
+</style>
+</head>
+<body>
+  <main>
+<h1>Cognitive Walkthrough</h1>
+<h2>Purpose</h2>
+<p>This walkthrough checks whether a first-time user can understand and complete the final <strong>Canopy Pause V6</strong> prototype without extra explanation. It focuses on learnability: whether users know what to do, can find the correct action, understand the feedback, and can continue through the flow.</p>
+<h2>Task 1: Start a Study-Safe Reset</h2>
+<p><strong>User goal:</strong> Start a short reset without feeling forced to stop immediately.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Finding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Does the user know what to do first?</td>
+<td><strong>Use my usual reset</strong> is the clearest first action.</td>
+</tr>
+<tr>
+<td>Does &quot;usual reset&quot; make sense?</td>
+<td>The label could feel unclear without context.</td>
+</tr>
+<tr>
+<td>Does the prompt feel pushy?</td>
+<td>Deep-focus users need control over timing.</td>
+</tr>
+</tbody></table>
+<p><strong>Result:</strong> The first step is learnable because it gives a fast action while preserving user control.</p>
+<h2>Task 2: Complete the Study Handoff</h2>
+<p><strong>User goal:</strong> Leave at a clear stopping point and know what to resume later.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Finding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Does the user understand why text is entered before leaving?</td>
+<td>Users need support for both stopping and returning.</td>
+</tr>
+<tr>
+<td>Does the user know what to write?</td>
+<td>Examples help different study styles.</td>
+</tr>
+<tr>
+<td>Does the user understand what happens next?</td>
+<td>The anchor must feel useful, not like extra admin.</td>
+</tr>
+</tbody></table>
+<p><strong>Result:</strong> The handoff screen supports the core design problem: preserving the study thread.</p>
+<h2>Task 3: Understand the Usual Reset Recommendation</h2>
+<p><strong>User goal:</strong> Decide whether the recommended reset is worth taking.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Finding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Does the user understand the recommendation?</td>
+<td>Place, reason, and total time need to be visible quickly.</td>
+</tr>
+<tr>
+<td>Does the user understand comfort information?</td>
+<td>Plain tags are clearer than numeric scores.</td>
+</tr>
+<tr>
+<td>Does the user understand the data is estimated?</td>
+<td>Users may over-trust comfort information.</td>
+</tr>
+</tbody></table>
+<p><strong>Result:</strong> The recommendation is understandable if comfort information is practical and clearly labelled as an estimate.</p>
+<h2>Task 4: Change Reset Style</h2>
+<p><strong>User goal:</strong> Choose a different reset type when the default does not fit.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Finding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Are the style options understandable?</td>
+<td>Closest, Quietest, Coolest, and Indoor Nature are clear.</td>
+</tr>
+<tr>
+<td>Does the user understand trade-offs?</td>
+<td>Closest may be fast but less comfortable.</td>
+</tr>
+<tr>
+<td>Does style choice add friction?</td>
+<td>Choosing every time would slow the flow.</td>
+</tr>
+</tbody></table>
+<p><strong>Result:</strong> Style changing works as an optional control, not a required step.</p>
+<h2>Task 5: Follow the Reset Journey</h2>
+<p><strong>User goal:</strong> Reach the reset spot without reading a complex map.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Finding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Does the user understand progress?</td>
+<td>A simple stage model is easier than map-heavy navigation.</td>
+</tr>
+<tr>
+<td>Does the user know where to go?</td>
+<td>Landmark directions reduce confusion.</td>
+</tr>
+<tr>
+<td>Is there a backup if outdoor conditions are unsuitable?</td>
+<td>Outdoor resets should not be forced.</td>
+</tr>
+</tbody></table>
+<p><strong>Result:</strong> The journey is learnable because it gives enough direction without turning the app into a complex map.</p>
+<h2>Task 6: Complete the Nature Reset</h2>
+<p><strong>User goal:</strong> Take a short break that connects to campus nature without becoming another phone activity.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Finding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Does the user know what to do during the reset?</td>
+<td>One sentence is easier than guided meditation.</td>
+</tr>
+<tr>
+<td>Does the prompt feel connected to nature?</td>
+<td>The prompt should refer to real campus cues.</td>
+</tr>
+<tr>
+<td>Does the screen encourage extra phone use?</td>
+<td>Extra controls could distract from the reset.</td>
+</tr>
+</tbody></table>
+<p><strong>Result:</strong> The nature reset is understandable and appropriately lightweight.</p>
+<h2>Task 7: Return and Resume Study</h2>
+<p><strong>User goal:</strong> End the break on time and restart study quickly.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Finding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Does the user know the break is over?</td>
+<td>The return cue must be explicit.</td>
+</tr>
+<tr>
+<td>Does the user know what to resume?</td>
+<td>The task anchor must be visible.</td>
+</tr>
+<tr>
+<td>Does the app avoid encouraging break drift?</td>
+<td>Extension can weaken the bounded break.</td>
+</tr>
+</tbody></table>
+<p><strong>Result:</strong> The return flow supports momentum because the saved task is the main action.</p>
+<h2>Task 8: Indoor Nature Reset</h2>
+<p><strong>User goal:</strong> Take a valid reset when going outside is too hot, rainy, crowded, or inconvenient.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Finding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Does the user understand why indoor is recommended?</td>
+<td>The reason should be plain.</td>
+</tr>
+<tr>
+<td>Does indoor reset feel legitimate?</td>
+<td>It should not feel like a failed outdoor break.</td>
+</tr>
+<tr>
+<td>Is nature still present?</td>
+<td>The flow must remain connected to the theme.</td>
+</tr>
+</tbody></table>
+<p><strong>Result:</strong> Indoor Nature Reset supports comfort and safety while keeping the nature connection visible.</p>
+<h2>Task 9: Group Reset</h2>
+<p><strong>User goal:</strong> Help a study group take a short break and return together.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Finding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Does the user know how to start group mode?</td>
+<td>Group Reset should be visible but not dominate the solo flow.</td>
+</tr>
+<tr>
+<td>Does the group setup make sense?</td>
+<td>Group size, break length, and return task are enough setup.</td>
+</tr>
+<tr>
+<td>Does the user understand group suitability?</td>
+<td>Capacity wording must be specific.</td>
+</tr>
+<tr>
+<td>Does sharing make sense?</td>
+<td>Users expect quick sharing options.</td>
+</tr>
+</tbody></table>
+<p><strong>Result:</strong> Group mode is learnable because it solves the social problem of returning without one person enforcing the break.</p>
+<h1></h1>
+
+  </main>
+  <script src="../assets/view-as-pdf.js" defer></script>
+</body>
+</html>

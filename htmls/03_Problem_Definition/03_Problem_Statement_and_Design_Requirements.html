@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>03_Problem_Statement_and_Design_Requirements.md</title>
+  <style>
+@page { size: A4; margin: 18mm 16mm; }
+* { box-sizing: border-box; }
+html { background:#eef2ef; }
+body { font-family:"Segoe UI", Arial, sans-serif; color:#17221c; font-size:11pt; line-height:1.52; margin:0; }
+main { max-width:190mm; margin:0 auto; background:#fff; min-height:100vh; padding:20mm 17mm; }
+h1,h2,h3,h4 { color:#163524; line-height:1.18; margin:1.25em 0 .45em; break-after:avoid; }
+h1 { margin-top:0; font-size:24pt; border-bottom:2px solid #b9d5c2; padding-bottom:7px; }
+h2 { font-size:17pt; border-bottom:1px solid #d7e4db; padding-bottom:4px; }
+h3 { font-size:13.5pt; }
+p { margin:0 0 .72em; }
+ul,ol { margin:0 0 .85em 1.35em; padding:0; }
+table { width:100%; border-collapse:collapse; margin:.95em 0 1.15em; font-size:9.4pt; }
+tr { break-inside:avoid; }
+th,td { border:1px solid #cbd8cf; padding:7px 8px; vertical-align:top; }
+th { background:#eef5f0; color:#153321; font-weight:700; }
+code { font-family:Consolas, monospace; background:#f3f6f4; border:1px solid #dde7e0; border-radius:4px; padding:.08em .28em; }
+pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9f7; border:1px solid #d9e4dc; border-radius:7px; padding:12px 14px; font-size:9pt; }
+pre code { background:transparent; border:0; padding:0; }
+a { color:#1c6843; }
+.source-title { color:#57655c; font-size:8.5pt; margin-bottom:10px; padding-bottom:6px; border-bottom:1px solid #dce7df; overflow-wrap:anywhere; }
+.portfolio-index ul { columns:2; column-gap:28px; }
+.portfolio-index li { break-inside:avoid; margin-bottom:.35em; }
+@media print {
+  html, body { background:#fff; }
+  main { max-width:none; min-height:auto; padding:0; }
+  .portfolio-index ul { columns:1; }
+}
+</style>
+</head>
+<body>
+  <main>
+<h1>Problem Statement and Design Requirements</h1>
+<h2>Problem Statement</h2>
+<p>CDU students who study for long periods in the library often notice they need a break only after their focus has already dropped. They may re-read without absorbing information, make simple mistakes, feel physically restless, or become frustrated before deciding to pause.</p>
+<p>However, students do not always take effective breaks. Many default to indoor breaks, coffee, phone scrolling, or games because these options are easier than going outside. Outdoor breaks can feel risky in Darwin because students are unsure about heat, shade, seating, distance, quietness, and total time. Some students also worry that leaving their study spot will make it harder to return to the same task, section, problem, or mental model.</p>
+<p>The design challenge is therefore not simply to encourage students to go outside. The challenge is to help students take short, low-effort, nature-connected reset breaks while protecting study momentum.</p>
+<h2>Design Opportunity</h2>
+<p>The research suggests that a useful design must reduce the effort and uncertainty around taking a break while making return-to-study easier. The strongest opportunity is a study-break assistant that helps student&#39;s study flow, mental model, break needs, etc. The product should treat outdoor breaks as valuable, but not force them when conditions are poor. Indoor nature reset options are important in Darwin because heat, rain, or limited shade can make outdoor breaks unsuitable.</p>
+<h2>Key Research Findings and Design Implications</h2>
+<table>
+<thead>
+<tr>
+<th>Research finding</th>
+<th>Design implication</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Students often notice break need through performance breakdown, such as re-reading, mistakes, or fatigue.</td>
+<td>Use gentle, user-controlled break prompts that respect natural stopping points.</td>
+</tr>
+<tr>
+<td>Phone, coffee, or indoor breaks are easier than deciding where to go outside.</td>
+<td>Make the outdoor reset path low-effort, with one recommended option by default.</td>
+</tr>
+<tr>
+<td>Outdoor breaks depend on comfort certainty: shade, seating, walking time, heat, breeze, and quietness.</td>
+<td>Show practical comfort and time information before the student leaves.</td>
+</tr>
+<tr>
+<td>The strongest return problem is losing the study thread.</td>
+<td>Ask students to save a one-line task anchor and show it again when they return.</td>
+</tr>
+<tr>
+<td>Breaks can drift longer than intended, especially phone and group breaks.</td>
+<td>Use a short timer, clear return cue, and optional shared group timer.</td>
+</tr>
+<tr>
+<td>Participants accepted weather or location data only when it felt purposeful and controlled.</td>
+<td>Make location use optional, avoid background tracking, and label simulated comfort data honestly.</td>
+</tr>
+</tbody></table>
+<h2>Core Design Requirements</h2>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Evidence / Reason</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>The system must provide gentle break prompts that can be delayed or ignored.</td>
+<td>Students rejected random interruptions and wanted to stop at natural task boundaries.</td>
+</tr>
+<tr>
+<td>The system must support a study handoff before the break.</td>
+<td>Participants wanted to finish at a sensible point and know exactly what to resume.</td>
+</tr>
+<tr>
+<td>The system must show the saved task anchor when the student returns.</td>
+<td>Returning to the task was one of the strongest repeated needs across the interviews.</td>
+</tr>
+<tr>
+<td>The system must recommend one clear nearby reset option by default.</td>
+<td>Too many choices would push tired students back toward phone or indoor breaks.</td>
+</tr>
+<tr>
+<td>The system must show comfort and time information before the student leaves.</td>
+<td>Shade, seating, heat, distance, quietness, and total time shaped trust in outdoor breaks.</td>
+</tr>
+<tr>
+<td>The system must include a short bounded timer and clear return cue.</td>
+<td>Timers help prevent breaks from becoming open-ended.</td>
+</tr>
+<tr>
+<td>The system should include one brief nature-noticing prompt during the reset.</td>
+<td>Nature prompts were accepted when short, practical, and not framed as forced mindfulness.</td>
+</tr>
+<tr>
+<td>The system should offer Indoor Nature Reset when outdoor conditions are poor.</td>
+<td>Heat, rain, poor shade, or lack of seating can make outdoor breaks uncomfortable.</td>
+</tr>
+<tr>
+<td>The system should support a simple group reset mode.</td>
+<td>Group students need shared timing and a less awkward way to end the break.</td>
+</tr>
+<tr>
+<td>The system must be transparent about data use and prototype estimates.</td>
+<td>Participants trusted comfort information more when it was labelled as estimated, not guaranteed.</td>
+</tr>
+<tr>
+<td>The interface must be low-effort and accessible.</td>
+<td>Students are unlikely to use the system if it feels like another task; text, contrast, touch targets, and labels must be clear.</td>
+</tr>
+</tbody></table>
+<h2>Final Design Direction</h2>
+<p>Canopy Pause should be a low-effort study-break assistant for CDU library students. Its value is the full pause-and-return loop: helping students stop safely, choose a comfortable nature-connected reset, keep the break short, and return to study with a clear next action.</p>
+
+  </main>
+  <script src="../assets/view-as-pdf.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>01_Ideation_and_Concept_Selection.md</title>
+  <style>
+@page { size: A4; margin: 18mm 16mm; }
+* { box-sizing: border-box; }
+html { background:#eef2ef; }
+body { font-family:"Segoe UI", Arial, sans-serif; color:#17221c; font-size:11pt; line-height:1.52; margin:0; }
+main { max-width:190mm; margin:0 auto; background:#fff; min-height:100vh; padding:20mm 17mm; }
+h1,h2,h3,h4 { color:#163524; line-height:1.18; margin:1.25em 0 .45em; break-after:avoid; }
+h1 { margin-top:0; font-size:24pt; border-bottom:2px solid #b9d5c2; padding-bottom:7px; }
+h2 { font-size:17pt; border-bottom:1px solid #d7e4db; padding-bottom:4px; }
+h3 { font-size:13.5pt; }
+p { margin:0 0 .72em; }
+ul,ol { margin:0 0 .85em 1.35em; padding:0; }
+table { width:100%; border-collapse:collapse; margin:.95em 0 1.15em; font-size:9.4pt; }
+tr { break-inside:avoid; }
+th,td { border:1px solid #cbd8cf; padding:7px 8px; vertical-align:top; }
+th { background:#eef5f0; color:#153321; font-weight:700; }
+code { font-family:Consolas, monospace; background:#f3f6f4; border:1px solid #dde7e0; border-radius:4px; padding:.08em .28em; }
+pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9f7; border:1px solid #d9e4dc; border-radius:7px; padding:12px 14px; font-size:9pt; }
+pre code { background:transparent; border:0; padding:0; }
+a { color:#1c6843; }
+.source-title { color:#57655c; font-size:8.5pt; margin-bottom:10px; padding-bottom:6px; border-bottom:1px solid #dce7df; overflow-wrap:anywhere; }
+.portfolio-index ul { columns:2; column-gap:28px; }
+.portfolio-index li { break-inside:avoid; margin-bottom:.35em; }
+@media print {
+  html, body { background:#fff; }
+  main { max-width:none; min-height:auto; padding:0; }
+  .portfolio-index ul { columns:1; }
+}
+</style>
+</head>
+<body>
+  <main>
+<h1>Ideation and Concept Selection</h1>
+<p>The main design direction from the actual data is clear: students do not only need a map to outdoor spaces. They need a low-effort system that helps them take a short outdoor reset without losing study momentum.</p>
+<hr>
+<h2>Design Problem to Ideate Around</h2>
+<p>CDU students often study for long periods in the library and only realise they need a break once their focus has already dropped. They may avoid outdoor breaks because they do not know where to go, they are worried about heat, shade, seating, time, or effort, or they fear losing the study thread. Some students default to phone breaks, while group students struggle because social breaks extend too long.</p>
+<hr>
+<h2>Concepts</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+<th>Strengths</th>
+<th>Weaknesses</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A. ShadeStep Map</td>
+<td>A simple map that shows nearby shaded outdoor spots, seating, walking time, and route from the library.</td>
+<td>Directly addresses uncertainty about where to go, shade, seating, and distance.</td>
+<td>A map alone does not solve phone distraction or returning to study.</td>
+</tr>
+<tr>
+<td>B. FlowAnchor Timer</td>
+<td>A study timer that prompts students at a suitable stopping point and asks for a one-line task anchor before the break.</td>
+<td>Strongly supports students who fear losing the study flow, mental model, reading argument, or next task.</td>
+<td>Does not by itself encourage outdoor or nature-based breaks.</td>
+</tr>
+<tr>
+<td>C. One-Tap Reset</td>
+<td>A simplified break flow that shows only one recommended nearby shaded option instead of a long list.</td>
+<td>Reduces decision-making effort for tired students who may otherwise default to phone or indoor breaks.</td>
+<td>May feel limiting if students want to compare multiple spaces.</td>
+</tr>
+<tr>
+<td>D. Nature-Noticing Prompts</td>
+<td>Short prompts that guide students to notice shade, breeze, trees, sky, sound, or light during the break.</td>
+<td>Keeps the human-nature connection visible and helps students shift attention away from screens.</td>
+<td>If too long or too wellness-focused, students may ignore it.</td>
+</tr>
+<tr>
+<td>E. Break Boundary Timer</td>
+<td>A short timer for 5, 7, or 10 minute breaks, including a clear return cue.</td>
+<td>Addresses breaks becoming longer than intended, especially phone breaks and outdoor breaks.</td>
+<td>A timer can feel annoying if it is too pushy or inflexible.</td>
+</tr>
+<tr>
+<td>F. Group Return Timer</td>
+<td>A shared timer for group study breaks, with a group-friendly spot suggestion and shared return cue.</td>
+<td>Directly supports group study where no one wants to be the person who ends the break.</td>
+<td>Could add complexity to the first prototype if treated as a main flow.</td>
+</tr>
+<tr>
+<td>G. Comfort Fallback Mode</td>
+<td>If outdoor conditions are poor, the app suggests an indoor reset with nature-visible cues such as window view, shade, or breeze near an entrance.</td>
+<td>Prevents the design from forcing outdoor breaks when heat, rain, or poor seating make them unsuitable.</td>
+<td>Requires clear wording so it still feels connected to the nature-reset goal.</td>
+</tr>
+<tr>
+<td>H. Smart Bench Sensor Network</td>
+<td>A future system where sensors report shade, heat, seating availability, and occupancy in real time.</td>
+<td>High-fidelity future vision and could improve comfort accuracy.</td>
+<td>Too technical and unrealistic for the current prototype.</td>
+</tr>
+<tr>
+<td>I. Social Break Board</td>
+<td>A social feature where students invite friends to join public outdoor reset breaks.</td>
+<td>Could support social study and shared breaks.</td>
+<td>Creates privacy, social pressure, and distraction risks.</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Selected Concept: Canopy Pause</h2>
+<p>The selected concept is named as <strong>Canopy Pause</strong>, a low-effort study-break assistant that helps CDU library students take short, comfortable outdoor reset breaks and return to study with less friction.</p>
+<p>Canopy Pause combines the strongest parts of the selected concepts:</p>
+<ol>
+<li><strong>FlowAnchor Timer</strong>: prompts students at a suitable stopping point and supports snoozing.</li>
+<li><strong>Task Anchor</strong>: asks the student to write one clear next step before leaving.</li>
+<li><strong>One-Tap Reset</strong>: recommends one nearby shaded break option by default.</li>
+<li><strong>ShadeStep Map</strong>: shows walking time, total time, shade, seating, quietness, and comfort information.</li>
+<li><strong>Break Boundary Timer</strong>: keeps the break short and gives a clear return cue.</li>
+<li><strong>Nature-Noticing Prompt</strong>: gives a short prompt during the break, such as noticing breeze, shade, trees, or sky.</li>
+<li><strong>Comfort Fallback Mode</strong>: offers indoor reset options when outdoor conditions are poor.</li>
+<li><strong>Group Return Timer</strong>: supports group study with a shared timer and shared return cue.</li>
+</ol>
+<hr>
+<h2>Final Design Flow</h2>
+<p><strong>notice → pause → save task → choose comfortable spot → notice nature → return → resume</strong></p>
+
+  </main>
+  <script src="../assets/view-as-pdf.js" defer></script>
+</body>
+</html>

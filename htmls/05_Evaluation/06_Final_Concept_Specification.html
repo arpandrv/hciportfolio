@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>06_Final_Concept_Specification.md</title>
+  <style>
+@page { size: A4; margin: 18mm 16mm; }
+* { box-sizing: border-box; }
+html { background:#eef2ef; }
+body { font-family:"Segoe UI", Arial, sans-serif; color:#17221c; font-size:11pt; line-height:1.52; margin:0; }
+main { max-width:190mm; margin:0 auto; background:#fff; min-height:100vh; padding:20mm 17mm; }
+h1,h2,h3,h4 { color:#163524; line-height:1.18; margin:1.25em 0 .45em; break-after:avoid; }
+h1 { margin-top:0; font-size:24pt; border-bottom:2px solid #b9d5c2; padding-bottom:7px; }
+h2 { font-size:17pt; border-bottom:1px solid #d7e4db; padding-bottom:4px; }
+h3 { font-size:13.5pt; }
+p { margin:0 0 .72em; }
+ul,ol { margin:0 0 .85em 1.35em; padding:0; }
+table { width:100%; border-collapse:collapse; margin:.95em 0 1.15em; font-size:9.4pt; }
+tr { break-inside:avoid; }
+th,td { border:1px solid #cbd8cf; padding:7px 8px; vertical-align:top; }
+th { background:#eef5f0; color:#153321; font-weight:700; }
+code { font-family:Consolas, monospace; background:#f3f6f4; border:1px solid #dde7e0; border-radius:4px; padding:.08em .28em; }
+pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9f7; border:1px solid #d9e4dc; border-radius:7px; padding:12px 14px; font-size:9pt; }
+pre code { background:transparent; border:0; padding:0; }
+a { color:#1c6843; }
+.source-title { color:#57655c; font-size:8.5pt; margin-bottom:10px; padding-bottom:6px; border-bottom:1px solid #dce7df; overflow-wrap:anywhere; }
+.portfolio-index ul { columns:2; column-gap:28px; }
+.portfolio-index li { break-inside:avoid; margin-bottom:.35em; }
+@media print {
+  html, body { background:#fff; }
+  main { max-width:none; min-height:auto; padding:0; }
+  .portfolio-index ul { columns:1; }
+}
+</style>
+</head>
+<body>
+  <main>
+<h1>Final Concept Specification</h1>
+<h2>Product Name</h2>
+<p><strong>Canopy Pause V6: Final Study-Safe Nature Reset</strong></p>
+<h2>Product Type</h2>
+<p>Canopy Pause is a mobile interaction prototype for CDU library students who study for long periods and need short, comfortable, nature-connected reset breaks without losing study momentum.</p>
+<p>The final concept includes:</p>
+<ul>
+<li>a mobile prototype,</li>
+<li>comfort-aware outdoor and indoor reset recommendations,</li>
+<li>Wizard-of-Oz simulated comfort data,</li>
+<li>a short nature-noticing timer,</li>
+<li>optional group reset support.</li>
+</ul>
+<h2>Final Design Problem</h2>
+<p>Students often recognise the need for a break only after their concentration has already dropped. They may avoid outdoor breaks because going outside feels uncertain or effortful, especially in Darwin heat, or because they fear losing their study flow.</p>
+<p>The final design responds to this by supporting the complete pause-reset-return loop:</p>
+<ol>
+<li>pause at a suitable point,</li>
+<li>save the current study thread,</li>
+<li>choose a comfortable outdoor or indoor nature reset,</li>
+<li>keep the break short and bounded,</li>
+<li>return using a saved task anchor.</li>
+</ol>
+<h2>Core User Tasks</h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>How the final prototype supports it</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Start a study-safe reset</td>
+<td>The user starts from Focus Session and chooses <strong>Use my usual reset</strong> or changes reset style.</td>
+</tr>
+<tr>
+<td>Protect study momentum</td>
+<td>Study Handoff asks what the student will finish before leaving and what they will resume after returning.</td>
+</tr>
+<tr>
+<td>Choose a comfort-aware reset</td>
+<td>The app recommends one reset option and shows shade, seating likelihood, breeze, crowd level, walking time, total time, and estimate wording.</td>
+</tr>
+<tr>
+<td>Complete a nature-connected reset</td>
+<td>The timer gives one short nature prompt, such as noticing breeze, shade, trees, or natural light.</td>
+</tr>
+<tr>
+<td>Return and resume</td>
+<td>Return Cue and Resume Focus show the saved task anchor as the main next action.</td>
+</tr>
+<tr>
+<td>Use group reset when needed</td>
+<td>Group mode supports group size, shared timer, capacity wording, and a shared return task.</td>
+</tr>
+</tbody></table>
+<h2>Final Screen Set</h2>
+<table>
+<thead>
+<tr>
+<th>Flow</th>
+<th>Screens</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Core solo flow</td>
+<td>Focus Session, Study Handoff, Usual Reset Recommendation, Reset Journey, Nature Reset Timer, Return Cue, Resume Focus</td>
+</tr>
+<tr>
+<td>Optional controls</td>
+<td>Change Reset Style, Why This Spot?</td>
+</tr>
+<tr>
+<td>Indoor nature flow</td>
+<td>Indoor Nature Recommendation, Indoor Nature Timer</td>
+</tr>
+<tr>
+<td>Group flow</td>
+<td>Group Setup, Group Recommendation, Share Group Timer, Shared Group Timer, Group Return Cue</td>
+</tr>
+</tbody></table>
+<h2>Core Feature</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Use My Usual Reset</td>
+<td>Gives the student a fast repeat-use path based on a previous or preferred reset style.</td>
+</tr>
+<tr>
+<td>Study Handoff</td>
+<td>Captures both the stopping point and return point before the break begins.</td>
+</tr>
+<tr>
+<td>Comfort-Aware Recommendation</td>
+<td>Shows one practical reset option with shade, seating, crowd, breeze, time, and estimate information.</td>
+</tr>
+<tr>
+<td>Change Reset Style</td>
+<td>Allows the user to choose Closest, Quietest, Coolest, or Indoor Nature when the default does not fit.</td>
+</tr>
+<tr>
+<td>Nature Reset Timer</td>
+<td>Keeps the break short while giving one low-effort prompt connected to campus nature.</td>
+</tr>
+<tr>
+<td>Indoor Nature Reset</td>
+<td>Provides a valid reset when heat, rain, poor shade, or user preference makes outdoor breaks unsuitable.</td>
+</tr>
+<tr>
+<td>Group Reset</td>
+<td>Helps small study groups take a bounded break with a shared timer and shared return task.</td>
+</tr>
+<tr>
+<td>Why This Spot?</td>
+<td>Explains that recommendation data is estimated and avoids overclaiming live accuracy.</td>
+</tr>
+</tbody></table>
+<h2>Prototype Boundaries</h2>
+<h3>Implemented in the Prototype</h3>
+<ul>
+<li>Screen-to-screen mobile flow.</li>
+<li>Study handoff.</li>
+<li>Usual reset recommendation.</li>
+<li>Reset style switching.</li>
+<li>Indoor Nature Reset flow.</li>
+<li>Group reset flow.</li>
+<li>Timer, return cue, and resume screen.</li>
+<li>Simulated comfort tags.</li>
+</ul>
+<h3>Simulated Through Wizard of Oz</h3>
+<ul>
+<li>Weather comfort.</li>
+<li>Shade condition.</li>
+<li>Seating likelihood.</li>
+<li>Crowd and noise level.</li>
+<li>Walking time and route comfort.</li>
+<li>Group spot availability.</li>
+<li>Recent spot feedback.</li>
+<li>Shared timer behaviour.</li>
+</ul>
+<h3>Not Implemented</h3>
+<ul>
+<li>Real weather API integration.</li>
+<li>Live shade detection.</li>
+<li>Physical sensor network.</li>
+<li>Real occupancy detection.</li>
+<li>Real QR marker deployment.</li>
+<li>Real-time background location tracking.</li>
+</ul>
+<h1></h1>
+
+  </main>
+  <script src="../assets/view-as-pdf.js" defer></script>
+</body>
+</html>

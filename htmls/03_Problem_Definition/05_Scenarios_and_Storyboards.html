@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>05_Scenarios_and_Storyboards.md</title>
+  <style>
+@page { size: A4; margin: 18mm 16mm; }
+* { box-sizing: border-box; }
+html { background:#eef2ef; }
+body { font-family:"Segoe UI", Arial, sans-serif; color:#17221c; font-size:11pt; line-height:1.52; margin:0; }
+main { max-width:190mm; margin:0 auto; background:#fff; min-height:100vh; padding:20mm 17mm; }
+h1,h2,h3,h4 { color:#163524; line-height:1.18; margin:1.25em 0 .45em; break-after:avoid; }
+h1 { margin-top:0; font-size:24pt; border-bottom:2px solid #b9d5c2; padding-bottom:7px; }
+h2 { font-size:17pt; border-bottom:1px solid #d7e4db; padding-bottom:4px; }
+h3 { font-size:13.5pt; }
+p { margin:0 0 .72em; }
+ul,ol { margin:0 0 .85em 1.35em; padding:0; }
+table { width:100%; border-collapse:collapse; margin:.95em 0 1.15em; font-size:9.4pt; }
+tr { break-inside:avoid; }
+th,td { border:1px solid #cbd8cf; padding:7px 8px; vertical-align:top; }
+th { background:#eef5f0; color:#153321; font-weight:700; }
+code { font-family:Consolas, monospace; background:#f3f6f4; border:1px solid #dde7e0; border-radius:4px; padding:.08em .28em; }
+pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9f7; border:1px solid #d9e4dc; border-radius:7px; padding:12px 14px; font-size:9pt; }
+pre code { background:transparent; border:0; padding:0; }
+a { color:#1c6843; }
+.source-title { color:#57655c; font-size:8.5pt; margin-bottom:10px; padding-bottom:6px; border-bottom:1px solid #dce7df; overflow-wrap:anywhere; }
+.portfolio-index ul { columns:2; column-gap:28px; }
+.portfolio-index li { break-inside:avoid; margin-bottom:.35em; }
+@media print {
+  html, body { background:#fff; }
+  main { max-width:none; min-height:auto; padding:0; }
+  .portfolio-index ul { columns:1; }
+}
+</style>
+</head>
+<body>
+  <main>
+<h1>Scenarios and Storyboards</h1>
+<h2>Purpose</h2>
+<p>This document shows how Canopy Pause supports the main user situations identified through discovery research. The scenarios focus on the final V6 concept and demonstrate the complete pause-reset-return loop.</p>
+<h2>Scenario A: Deep Focus Solo Study</h2>
+<h3>Situation</h3>
+<p>A student is studying alone in the CDU library. They are reading, coding, debugging, or writing notes and have been focused for a long period. They know they need a break, but stopping suddenly feels risky because they may lose the task thread.</p>
+<table>
+<thead>
+<tr>
+<th>What happens</th>
+<th>Design response</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>The student is deep in work and begins to feel tired.</td>
+<td>Focus Session offers a gentle reset option without forcing an immediate break.</td>
+</tr>
+<tr>
+<td>The student wants to stop only after finishing the current step.</td>
+<td>The app asks, &quot;Pause after your current task?&quot; and allows delay.</td>
+</tr>
+<tr>
+<td>The student writes what they will finish before leaving.</td>
+<td>Study Handoff captures a stopping point.</td>
+</tr>
+<tr>
+<td>The student writes what they will resume after returning.</td>
+<td>Study Handoff captures the return task anchor.</td>
+</tr>
+<tr>
+<td>The student takes a short reset.</td>
+<td>Timer keeps the break bounded and shows a brief nature prompt.</td>
+</tr>
+<tr>
+<td>The student returns to the library.</td>
+<td>Resume Focus shows &quot;Start here&quot; with the saved task.</td>
+</tr>
+</tbody></table>
+<h2>Scenario B: Comfort-Aware Nature Reset</h2>
+<h3>Situation</h3>
+<p>A student wants a proper reset away from the screen, but outdoor breaks feel uncertain in Darwin. They need to know whether a nearby place is shaded, seated, quiet enough, and worth the walking time. If outdoor conditions are poor, they still need a valid alternative.</p>
+<table>
+<thead>
+<tr>
+<th>What happens</th>
+<th>Design response</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>The student reaches a natural pause point.</td>
+<td>The app offers &quot;Use my usual reset&quot; as the fastest path.</td>
+</tr>
+<tr>
+<td>The student checks whether the suggested spot is worth leaving for.</td>
+<td>Recommendation shows total time, shade, seating likelihood, breeze, and crowd level.</td>
+</tr>
+<tr>
+<td>The student wants to understand the recommendation.</td>
+<td>&quot;Why this spot?&quot; explains that comfort data is a prototype estimate.</td>
+</tr>
+<tr>
+<td>Outdoor conditions are acceptable.</td>
+<td>Reset Journey gives simple landmark directions instead of a complex map.</td>
+</tr>
+<tr>
+<td>The student arrives and starts the timer.</td>
+<td>Nature Reset Timer shows one short prompt, such as noticing breeze or shade.</td>
+</tr>
+<tr>
+<td>If outdoor conditions are poor, the student chooses an indoor reset instead.</td>
+<td>Indoor Nature Reset offers a window or indoor nature-view option without framing it as a failed break.</td>
+</tr>
+</tbody></table>
+<h2>Scenario C: Group Study Reset</h2>
+<h3>Situation</h3>
+<p>A small group is studying together. The group loses focus and wants a short break, but group breaks often turn into long conversations. No one wants to be the person who tells everyone to return.</p>
+<table>
+<thead>
+<tr>
+<th>What happens</th>
+<th>Design response</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>The group notices that study momentum has dropped.</td>
+<td>Focus Session includes Group Reset as a secondary action.</td>
+</tr>
+<tr>
+<td>The group chooses size and break length.</td>
+<td>Group Setup captures group size and 5, 7, or 10 minute break length.</td>
+</tr>
+<tr>
+<td>The group saves what they will resume.</td>
+<td>Group handoff records the shared return task.</td>
+</tr>
+<tr>
+<td>The app recommends a suitable spot.</td>
+<td>Group Recommendation shows shade, crowd level, and capacity wording.</td>
+</tr>
+<tr>
+<td>The group starts a shared timer.</td>
+<td>Share options include QR code, link, or start on one phone.</td>
+</tr>
+<tr>
+<td>The timer ends.</td>
+<td>Group Return Cue prompts everyone to head back and shows the shared task anchor.</td>
+</tr>
+</tbody></table>
+<h2>Final Scenario Summary</h2>
+<p>The scenarios show that Canopy Pause is strongest when it supports the complete study-break cycle. It does not only point students toward outdoor spaces. It helps them stop safely, choose a comfortable nature-connected reset, keep the break short, and return to study with a clear next task.</p>
+
+  </main>
+  <script src="../assets/view-as-pdf.js" defer></script>
+</body>
+</html>
