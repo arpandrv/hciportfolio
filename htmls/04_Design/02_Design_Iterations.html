@@ -23,6 +23,8 @@ th { background:#eef5f0; color:#153321; font-weight:700; }
 code { font-family:Consolas, monospace; background:#f3f6f4; border:1px solid #dde7e0; border-radius:4px; padding:.08em .28em; }
 pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f7f9f7; border:1px solid #d9e4dc; border-radius:7px; padding:12px 14px; font-size:9pt; }
 pre code { background:transparent; border:0; padding:0; }
+.mermaid { margin:1em 0 1.2em; padding:12px; border:1px solid #d9e4dc; border-radius:7px; background:#f7f9f7; text-align:center; }
+.mermaid svg { max-width:100%; height:auto; }
 a { color:#1c6843; }
 .source-title { color:#57655c; font-size:8.5pt; margin-bottom:10px; padding-bottom:6px; border-bottom:1px solid #dce7df; overflow-wrap:anywhere; }
 .portfolio-index ul { columns:2; column-gap:28px; }
@@ -253,6 +255,39 @@ Prototype estimate explanation&quot;]
 <hr>
 
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (!window.mermaid) {
+    return;
+  }
+
+  mermaid.initialize({
+    startOnLoad: false,
+    securityLevel: "strict",
+    theme: "base",
+    themeVariables: {
+      primaryColor: "#eef5f0",
+      primaryTextColor: "#17221c",
+      primaryBorderColor: "#8fb99c",
+      lineColor: "#4e6f5d",
+      secondaryColor: "#f7f9f7",
+      tertiaryColor: "#ffffff",
+      fontFamily: '"Segoe UI", Arial, sans-serif'
+    }
+  });
+
+  document.querySelectorAll("pre > code.language-mermaid").forEach(function (code, index) {
+    var diagram = document.createElement("div");
+    diagram.className = "mermaid";
+    diagram.id = "mermaid-diagram-" + (index + 1);
+    diagram.textContent = code.textContent.trim();
+    code.parentElement.replaceWith(diagram);
+  });
+
+  mermaid.run({ querySelector: ".mermaid" });
+});
+  </script>
   <script src="../assets/view-as-pdf.js" defer></script>
 </body>
 </html>
